@@ -16,6 +16,17 @@
     <p class="loading">Wczytywanie słówek…</p>
   </main>
   <noscript><p class="loading">Ta gra wymaga włączonej obsługi JavaScript.</p></noscript>
+  <script>
+    // Browsers refuse to load the game's scripts and vocabulary from file://,
+    // so say so instead of showing "loading" forever.
+    if (location.protocol === 'file:') {
+      document.getElementById('app').innerHTML =
+        '<section class="card result-card"><h1>Gra nie działa z pliku</h1>' +
+        '<p class="subtitle">Przeglądarka blokuje wczytywanie gry bezpośrednio z dysku. ' +
+        'Uruchom w folderze gry polecenie <b>npm start</b> i otwórz ' +
+        '<b>http://localhost:8000</b>, albo otwórz grę z GitHub Pages.</p></section>';
+    }
+  </script>
   <script type="module" src="js/app.js"></script>
 </body>
 </html>
