@@ -1,0 +1,32 @@
+{
+  "title": "Zawody",
+  "words": [
+    { "de": "der Arzt", "pl": "lekarz" },
+    { "de": "die Ärztin", "pl": "lekarka" },
+    { "de": "der Bauer", "pl": "rolnik" },
+    { "de": "die Bäuerin", "pl": "rolniczka" },
+    { "de": "der Beruf", "pl": "zawód" },
+    { "de": "der Chef", "pl": "szef" },
+    { "de": "die Chefin", "pl": "szefowa" },
+    { "de": "der Kellner", "pl": "kelner" },
+    { "de": "die Kellnerin", "pl": "kelnerka" },
+    { "de": "der Koch", "pl": "kucharz" },
+    { "de": "die Köchin", "pl": "kucharka" },
+    { "de": "der Lehrer", "pl": "nauczyciel" },
+    { "de": "die Lehrerin", "pl": "nauczycielka" },
+    { "de": "der Manager", "pl": ["manager", "menedżer", "menadżer"] },
+    { "de": "die Managerin", "pl": ["managerka", "menedżerka", "menadżerka"] },
+    { "de": "der Mechaniker", "pl": "mechanik" },
+    { "de": "die Mechanikerin", "pl": "kobieta mechanik" },
+    { "de": "der Polizist", "pl": "policjant" },
+    { "de": "die Polizistin", "pl": "policjantka" },
+    { "de": "der Referent", "pl": "referent" },
+    { "de": "die Referentin", "pl": "referentka" },
+    { "de": "der Rentner", "pl": "emeryt" },
+    { "de": "die Rentnerin", "pl": "emerytka" },
+    { "de": "der Taxifahrer", "pl": "taksówkarz" },
+    { "de": "die Taxifahrerin", "pl": "taksówkarka" },
+    { "de": "der Verkäufer", "pl": "sprzedawca" },
+    { "de": "die Verkäuferin", "pl": "sprzedawczyni" }
+  ]
+}
