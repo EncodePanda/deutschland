@@ -1,0 +1,25 @@
+{
+  "title": "Zwierzęta",
+  "words": [
+    { "de": "der Hund", "pl": "pies" },
+    { "de": "die Katze", "pl": "kot" },
+    { "de": "das Pferd", "pl": "koń" },
+    { "de": "die Kuh", "pl": "krowa" },
+    { "de": "das Schwein", "pl": "świnia" },
+    { "de": "der Vogel", "pl": "ptak" },
+    { "de": "der Fisch", "pl": "ryba" },
+    { "de": "die Maus", "pl": "mysz", "context": "zwierzę" },
+    { "de": "der Bär", "pl": "niedźwiedź" },
+    { "de": "der Löwe", "pl": "lew" },
+    { "de": "der Affe", "pl": "małpa" },
+    { "de": "die Schildkröte", "pl": "żółw" },
+    { "de": "der Hase", "pl": "zając" },
+    { "de": "das Kaninchen", "pl": "królik" },
+    { "de": "die Ente", "pl": "kaczka" },
+    { "de": "das Huhn", "pl": "kura" },
+    { "de": "der Frosch", "pl": "żaba" },
+    { "de": "die Schlange", "pl": "wąż", "context": "zwierzę" },
+    { "de": "der Wolf", "pl": "wilk" },
+    { "de": "der Fuchs", "pl": "lis" }
+  ]
+}

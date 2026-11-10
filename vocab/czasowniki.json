@@ -1,0 +1,25 @@
+{
+  "title": "Czasowniki",
+  "words": [
+    { "de": "gehen", "pl": ["iść", "chodzić"] },
+    { "de": "kommen", "pl": ["przychodzić", "przyjść"] },
+    { "de": "essen", "pl": "jeść" },
+    { "de": "trinken", "pl": "pić" },
+    { "de": "schlafen", "pl": "spać" },
+    { "de": "lernen", "pl": "uczyć się" },
+    { "de": "lesen", "pl": "czytać" },
+    { "de": "schreiben", "pl": "pisać" },
+    { "de": "sprechen", "pl": ["mówić", "rozmawiać"] },
+    { "de": "hören", "pl": ["słuchać", "słyszeć"] },
+    { "de": "sehen", "pl": ["widzieć", "patrzeć"] },
+    { "de": "spielen", "pl": ["grać", "bawić się"] },
+    { "de": "arbeiten", "pl": "pracować" },
+    { "de": "wohnen", "pl": "mieszkać" },
+    { "de": "kaufen", "pl": ["kupować", "kupić"] },
+    { "de": "fahren", "pl": ["jechać", "jeździć"] },
+    { "de": "machen", "pl": "robić" },
+    { "de": "haben", "pl": "mieć" },
+    { "de": "sein", "pl": "być" },
+    { "de": "mögen", "pl": "lubić" }
+  ]
+}

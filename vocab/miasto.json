@@ -1,0 +1,27 @@
+{
+  "title": "Miasto i kraje",
+  "words": [
+    { "de": "die Stadt", "pl": "miasto" },
+    { "de": "die Straße", "pl": "ulica" },
+    { "de": "das Schloss", "pl": "zamek", "context": "budowla" },
+    { "de": "der Reißverschluss", "pl": ["zamek", "zamek błyskawiczny", "suwak"], "context": "w kurtce" },
+    { "de": "die Kirche", "pl": "kościół" },
+    { "de": "der Bahnhof", "pl": "dworzec" },
+    { "de": "der Flughafen", "pl": "lotnisko" },
+    { "de": "das Krankenhaus", "pl": "szpital" },
+    { "de": "die Brücke", "pl": "most" },
+    { "de": "das Geschäft", "pl": "sklep" },
+    { "de": "der Markt", "pl": ["rynek", "targ"] },
+    { "de": "die Bank", "pl": "bank", "context": "instytucja" },
+    { "de": "die Bank", "pl": ["ławka", "ławeczka"], "context": "do siedzenia" },
+    { "de": "der Park", "pl": "park" },
+    { "de": "das Kino", "pl": "kino" },
+    { "de": "die Apotheke", "pl": "apteka" },
+    { "de": "die Haltestelle", "pl": "przystanek" },
+    { "de": "das Rathaus", "pl": "ratusz" },
+    { "de": "Berlin", "pl": "Berlin" },
+    { "de": "Deutschland", "pl": "Niemcy" },
+    { "de": "Polen", "pl": "Polska" },
+    { "de": "Österreich", "pl": "Austria" }
+  ]
+}

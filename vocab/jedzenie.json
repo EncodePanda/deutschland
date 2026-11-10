@@ -1,0 +1,25 @@
+{
+  "title": "Jedzenie i picie",
+  "words": [
+    { "de": "das Brot", "pl": "chleb" },
+    { "de": "das Brötchen", "pl": ["bułka", "bułeczka"] },
+    { "de": "die Butter", "pl": "masło" },
+    { "de": "der Käse", "pl": "ser" },
+    { "de": "die Milch", "pl": "mleko" },
+    { "de": "das Wasser", "pl": "woda" },
+    { "de": "der Saft", "pl": "sok" },
+    { "de": "der Apfel", "pl": "jabłko" },
+    { "de": "die Birne", "pl": "gruszka", "context": "owoc" },
+    { "de": "die Kartoffel", "pl": ["ziemniak", "kartofel"] },
+    { "de": "das Ei", "pl": ["jajko", "jajo"] },
+    { "de": "das Fleisch", "pl": "mięso" },
+    { "de": "die Suppe", "pl": "zupa" },
+    { "de": "der Zucker", "pl": "cukier" },
+    { "de": "das Salz", "pl": "sól" },
+    { "de": "der Tee", "pl": "herbata" },
+    { "de": "der Kuchen", "pl": "ciasto" },
+    { "de": "das Gemüse", "pl": ["warzywa", "warzywo"] },
+    { "de": "das Obst", "pl": ["owoce", "owoc"] },
+    { "de": "das Frühstück", "pl": "śniadanie" }
+  ]
+}

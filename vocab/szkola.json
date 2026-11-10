@@ -1,0 +1,25 @@
+{
+  "title": "Szkoła",
+  "words": [
+    { "de": "die Schule", "pl": "szkoła" },
+    { "de": "der Lehrer", "pl": "nauczyciel" },
+    { "de": "die Lehrerin", "pl": "nauczycielka" },
+    { "de": "der Schüler", "pl": "uczeń" },
+    { "de": "die Schülerin", "pl": "uczennica" },
+    { "de": "das Buch", "pl": "książka" },
+    { "de": "das Heft", "pl": "zeszyt" },
+    { "de": "der Bleistift", "pl": "ołówek" },
+    { "de": "der Kugelschreiber", "pl": "długopis" },
+    { "de": "der Radiergummi", "pl": "gumka", "context": "do ścierania" },
+    { "de": "das Lineal", "pl": "linijka" },
+    { "de": "die Tafel", "pl": "tablica" },
+    { "de": "die Klasse", "pl": "klasa" },
+    { "de": "die Hausaufgabe", "pl": ["zadanie domowe", "praca domowa"] },
+    { "de": "die Pause", "pl": "przerwa" },
+    { "de": "das Fach", "pl": "przedmiot", "context": "szkolny" },
+    { "de": "die Note", "pl": "ocena" },
+    { "de": "der Stundenplan", "pl": "plan lekcji" },
+    { "de": "der Rucksack", "pl": "plecak" },
+    { "de": "die Prüfung", "pl": "egzamin" }
+  ]
+}
