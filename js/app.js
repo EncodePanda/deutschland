@@ -3,8 +3,10 @@
 import { loadTopics } from './vocab.js';
 import { buildOptions, buildPool, buildRound, shuffle } from './game.js';
 import { checkAnswer, normalize } from './check.js';
+import { createSpeaker } from './speech.js';
 
 const app = document.getElementById('app');
+const speaker = createSpeaker(window.speechSynthesis, window.SpeechSynthesisUtterance);
 
 const MODES = {
   choice: {
@@ -34,6 +36,7 @@ const state = {
   direction: 'pl-de',
   selected: new Set(),
   length: 10,
+  autoSpeak: true, // say the German word aloud after each answer
 };
 
 let game = null;
@@ -58,10 +61,38 @@ function show(html) {
 
 const $ = (selector) => app.querySelector(selector);
 
+// ---------- pronunciation ----------
+
+const ICON_SOUND =
+  '<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/><path d="M18.5 5.5a9 9 0 0 1 0 13"/></svg>';
+const ICON_MUTED =
+  '<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4z"/><path d="m16 9 5 6"/><path d="m21 9-5 6"/></svg>';
+
+/** A small button that says the German text aloud (see the click handler below). */
+const speakButton = (text) =>
+  `<button type="button" class="speak" data-speak="${esc(text)}" aria-label="Posłuchaj wymowy" title="Posłuchaj wymowy">${ICON_SOUND}</button>`;
+
+// Speaker buttons are hidden by CSS when this device cannot speak German.
+function refreshSpeechSupport() {
+  document.documentElement.classList.toggle('no-speech', !speaker.available());
+}
+refreshSpeechSupport();
+speaker.onChange(refreshSpeechSupport);
+
+// Keep the cursor in the answer field (and the phone keyboard up) when a speaker button is pressed.
+app.addEventListener('mousedown', (event) => {
+  if (event.target.closest('.speak, .sound-toggle')) event.preventDefault();
+});
+app.addEventListener('click', (event) => {
+  const button = event.target.closest('[data-speak]');
+  if (button) speaker.speak(button.dataset.speak);
+});
+
 // ---------- home ----------
 
 function renderHome() {
   game = null;
+  speaker.stop();
   const directionButtons = (mode) =>
     Object.entries(DIRECTIONS)
       .map(
@@ -248,12 +279,15 @@ function renderGame() {
     <div class="game-top">
       <button class="btn-quit" id="quit">✕ Zakończ</button>
       <span class="counter" id="counter"></span>
-      <span class="score-pill" id="score" aria-label="Poprawne odpowiedzi">✓ 0</span>
+      <span class="top-right">
+        <button type="button" class="sound-toggle" id="sound-toggle"></button>
+        <span class="score-pill" id="score" aria-label="Poprawne odpowiedzi">✓ 0</span>
+      </span>
     </div>
     <div class="progress" aria-hidden="true"><div class="progress-fill" id="progress"></div></div>
     <section class="card prompt-card">
       <p class="prompt-label">${direction.question}</p>
-      <p class="prompt-word" id="word" lang="${game.from}"></p>
+      <p class="prompt-word"><span id="word" lang="${game.from}"></span><span id="word-speak"></span></p>
       <p class="prompt-context" id="context" hidden></p>
     </section>
     ${answerArea}
@@ -268,6 +302,21 @@ function renderGame() {
     }
   });
   $('#next').addEventListener('click', nextQuestion);
+
+  const soundToggle = $('#sound-toggle');
+  const paintSoundToggle = () => {
+    const label = state.autoSpeak ? 'Wyłącz automatyczną wymowę' : 'Włącz automatyczną wymowę';
+    soundToggle.innerHTML = state.autoSpeak ? ICON_SOUND : ICON_MUTED;
+    soundToggle.setAttribute('aria-label', label);
+    soundToggle.title = label;
+    soundToggle.setAttribute('aria-pressed', String(state.autoSpeak));
+  };
+  soundToggle.addEventListener('click', () => {
+    state.autoSpeak = !state.autoSpeak;
+    if (!state.autoSpeak) speaker.stop();
+    paintSoundToggle();
+  });
+  paintSoundToggle();
 
   if (state.mode === 'choice') {
     $('#options').addEventListener('click', (event) => {
@@ -313,6 +362,8 @@ function showQuestion() {
   $('#counter').textContent = `${game.index + 1} / ${game.round.length}`;
   $('#progress').style.width = `${(game.index / game.round.length) * 100}%`;
   $('#word').textContent = entry[game.from][0];
+  // A German question may be heard right away; a German answer only once it is revealed.
+  $('#word-speak').innerHTML = game.from === 'de' ? speakButton(entry.de[0]) : '';
   const context = $('#context');
   context.textContent = entry.context;
   context.hidden = !entry.context;
@@ -388,8 +439,18 @@ function finishQuestion(result) {
   feedback.innerHTML = feedbackHtml(result, entry);
   feedback.hidden = false;
 
+  const spoken = state.autoSpeak ? speaker.speak(entry.de[0]) : Promise.resolve();
+
   if (result.status === 'correct') {
-    game.timer = setTimeout(nextQuestion, AUTO_ADVANCE_MS);
+    // Move on by itself, but not before the word has been said.
+    const current = game;
+    const index = game.index;
+    const pause = new Promise((resolve) => {
+      game.timer = setTimeout(resolve, AUTO_ADVANCE_MS);
+    });
+    Promise.all([pause, spoken]).then(() => {
+      if (game === current && game.index === index && game.answered) nextQuestion();
+    });
   } else {
     const next = $('#next');
     next.textContent = game.index + 1 === game.round.length ? 'Zobacz wynik' : 'Dalej';
@@ -400,7 +461,8 @@ function finishQuestion(result) {
 
 function feedbackHtml(result, entry) {
   const lang = game.to;
-  const expected = `<b lang="${lang}">${esc(result.expected)}</b>`;
+  const listen = lang === 'de' ? speakButton(result.expected) : '';
+  const expected = `<b lang="${lang}">${esc(result.expected)}</b>${listen}`;
   const others = entry[lang].filter((answer) => answer !== result.expected);
   const also = others.length
     ? `<span class="also">Też poprawnie: <span lang="${lang}">${esc(others.join(', '))}</span></span>`
@@ -425,6 +487,7 @@ function feedbackHtml(result, entry) {
 function nextQuestion() {
   if (!game || !game.answered) return;
   clearTimeout(game.timer);
+  speaker.stop();
   game.index += 1;
   if (game.index >= game.round.length) renderResult();
   else showQuestion();
@@ -469,10 +532,10 @@ function renderResult() {
 
   const pair = (r) => `
     <span class="review-pair">
-      <span lang="${from}">${esc(r.entry[from][0])}</span>
+      <span lang="${from}">${esc(r.entry[from][0])}</span>${from === 'de' ? speakButton(r.entry.de[0]) : ''}
       ${r.entry.context ? `<span class="ctx">(${esc(r.entry.context)})</span>` : ''}
       <span class="arrow" aria-hidden="true">→</span>
-      <span class="answer" lang="${to}">${esc(r.expected)}</span>
+      <span class="answer" lang="${to}">${esc(r.expected)}</span>${to === 'de' ? speakButton(r.expected) : ''}
     </span>`;
 
   const wrongList = wrong.length

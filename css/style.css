@@ -189,6 +189,21 @@ button:disabled { cursor: default; }
   font-weight: 700; font-variant-numeric: tabular-nums;
 }
 
+.top-right { display: flex; align-items: center; gap: 8px; }
+
+/* Pronunciation buttons. Hidden when the device has no German voice. */
+.speak, .sound-toggle {
+  display: inline-grid; place-items: center; width: 36px; height: 36px; padding: 0;
+  border: 0; border-radius: 50%; background: var(--accent-soft); color: var(--accent);
+  vertical-align: middle; cursor: pointer; flex: none;
+}
+.speak { margin-left: 8px; }
+.speak:hover, .sound-toggle:hover { filter: brightness(.96); }
+.sound-toggle { background: none; color: var(--ink-soft); }
+.sound-toggle[aria-pressed="true"] { color: var(--accent); }
+.review-pair .speak { width: 30px; height: 30px; margin-left: 4px; }
+.no-speech .speak, .no-speech .sound-toggle { display: none; }
+
 .progress { height: 8px; border-radius: 999px; background: var(--surface-2); overflow: hidden; margin-top: -6px; }
 .progress-fill { height: 100%; width: 0; border-radius: 999px; background: var(--accent); transition: width .3s ease; }
 

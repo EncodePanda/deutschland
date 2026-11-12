@@ -11,6 +11,11 @@ It is a static site: no server, no database, nothing stored between visits.
 
 Both work in either direction (Polish → German, German → Polish).
 
+Pronunciation: the German word is read aloud after each answer, and speaker
+buttons replay it. This uses the voice built into the browser, so there are no
+audio files; on a device without a German voice the buttons are hidden. The
+speaker icon at the top of the game turns the automatic reading off.
+
 Typing rules:
 
 - A wrong capital or small letter (`berlin` for `Berlin`) is accepted with a warning.
