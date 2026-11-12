@@ -1,0 +1,21 @@
+{
+  "title": "Dom i meble",
+  "words": [
+    { "de": "das Bett", "pl": "łóżko" },
+    { "de": "die Dusche", "pl": "prysznic" },
+    { "de": ["Hier kann man duschen.", "Hier kann man duschen"], "pl": ["Tu można wziąć prysznic.", "Tu można wziąć prysznic"] },
+    { "de": "der Fernseher", "pl": "telewizor" },
+    { "de": "der Gartenstuhl", "pl": "krzesło ogrodowe" },
+    { "de": "die Kommode", "pl": "komoda" },
+    { "de": "der Kühlschrank", "pl": "lodówka" },
+    { "de": "das Regal", "pl": "regał" },
+    { "de": "der Schrank", "pl": "szafa" },
+    { "de": "der Schreibtisch", "pl": "biurko" },
+    { "de": "der Sessel", "pl": "fotel" },
+    { "de": "das Sofa", "pl": "kanapa" },
+    { "de": "die Spüle", "pl": "zlew" },
+    { "de": "der Stuhl", "pl": "krzesło" },
+    { "de": "der Teller", "pl": "talerz" },
+    { "de": "die Tür", "pl": "drzwi" }
+  ]
+}
