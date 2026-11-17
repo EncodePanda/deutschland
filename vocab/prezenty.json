@@ -1,0 +1,17 @@
+{
+  "title": "Prezenty",
+  "words": [
+    { "de": "der Becher", "pl": "kubek" },
+    { "de": "einpacken", "pl": "pakować" },
+    { "de": ["Ich packe das Geschenk nicht ein.", "Ich packe das Geschenk nicht ein"], "pl": ["Nie zapakuję prezentu.", "Nie zapakuję prezentu"] },
+    { "de": "das Fotoalbum", "pl": "album fotograficzny" },
+    { "de": "das Geschenk", "pl": "prezent" },
+    { "de": "der Gutschein", "pl": "bon podarunkowy" },
+    { "de": "die Handyhülle", "pl": "osłonka na telefon komórkowy" },
+    { "de": "das Kochbuch", "pl": "książka kucharska" },
+    { "de": "der Kopfhörer", "pl": "słuchawka" },
+    { "de": "die Praline", "pl": ["czekoladka", "pralinka"] },
+    { "de": "schenken", "pl": "dawać w prezencie" },
+    { "de": "das Schlüsselband", "pl": "smycz do kluczy" }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "title": "Ubrania",
+  "words": [
+    { "de": "anprobieren", "pl": "przymierzać" },
+    { "de": ["Probiere das Hemd an!", "Probiere das Hemd an"], "pl": ["Przymierz tę koszulę!", "Przymierz tę koszulę"] },
+    { "de": "anziehen", "pl": "wkładać", "context": "ubranie" },
+    { "de": ["Was ziehst du an?", "Was ziehst du an"], "pl": ["Co wkładasz?", "Co wkładasz"] },
+    { "de": "der Bikini", "pl": ["kostium kąpielowy", "bikini"] },
+    { "de": "die Bluse", "pl": "bluzka" },
+    { "de": "die Farbe", "pl": "kolor" },
+    { "de": "gestreift", "pl": "w paski" },
+    { "de": "die Größe", "pl": "rozmiar" },
+    { "de": "das Hemd", "pl": "koszula" },
+    { "de": "die Hose", "pl": "spodnie" },
+    { "de": "die Jeans", "pl": "dżinsy" },
+    { "de": "das Kleid", "pl": "sukienka" },
+    { "de": "kombinieren", "pl": "zestawiać ze sobą" },
+    { "de": "das Outfit", "pl": ["stylizacja", "ubranie"] },
+    { "de": "der Pullover", "pl": "sweter" },
+    { "de": "der Rock", "pl": "spódnica" },
+    { "de": "das Sweatshirt", "pl": "bluza" },
+    { "de": "der Tipp", "pl": "wskazówka" },
+    { "de": ["Gib mir einen Tipp!", "Gib mir einen Tipp"], "pl": ["Daj mi wskazówkę!", "Daj mi wskazówkę"] },
+    { "de": "der Trend", "pl": "trend" },
+    { "de": "im Trend sein", "pl": ["być modnym", "być na czasie"] },
+    { "de": "tragen", "pl": "nosić" },
+    { "de": ["Trägst du gern Jeans?", "Trägst du gern Jeans"], "pl": ["Lubisz nosić dżinsy?", "Lubisz nosić dżinsy"] },
+    { "de": "das T-Shirt", "pl": "T-shirt" }
+  ]
+}

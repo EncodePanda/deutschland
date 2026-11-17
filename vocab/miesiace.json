@@ -1,0 +1,17 @@
+{
+  "title": "Miesiące",
+  "words": [
+    { "de": "der Januar", "pl": "styczeń" },
+    { "de": "der Februar", "pl": "luty" },
+    { "de": "der März", "pl": "marzec" },
+    { "de": "der April", "pl": "kwiecień" },
+    { "de": "der Mai", "pl": "maj" },
+    { "de": "der Juni", "pl": "czerwiec" },
+    { "de": "der Juli", "pl": "lipiec" },
+    { "de": "der August", "pl": "sierpień" },
+    { "de": "der September", "pl": "wrzesień" },
+    { "de": "der Oktober", "pl": "październik" },
+    { "de": "der November", "pl": "listopad" },
+    { "de": "der Dezember", "pl": "grudzień" }
+  ]
+}

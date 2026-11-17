@@ -1,0 +1,12 @@
+{
+  "title": "Akcesoria i obuwie",
+  "words": [
+    { "de": "das Armband", "pl": "bransoletka" },
+    { "de": "die Brille", "pl": "okulary" },
+    { "de": "der Hut", "pl": "kapelusz" },
+    { "de": "der Flip-Flop", "pl": ["klapek", "japonek"] },
+    { "de": "der Schuh", "pl": "but" },
+    { "de": "die Sonnenbrille", "pl": "okulary przeciwsłoneczne" },
+    { "de": "der Sportschuh", "pl": "but sportowy" }
+  ]
+}
